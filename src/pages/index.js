@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Constants } from '../src/config/constants';
-import BackGroundImage from '../src/components/backGroundImage';
+import BackGroundImage from '../components/backGroundImage';
+import { constants } from '../config';
 
 export default function Home() {
   const [backGroundImage, setBackGroundImage] = useState(null);
 
   useEffect(() => {
-    setBackGroundImage(Constants.BackGroundImage);
+    setBackGroundImage(constants.BackGroundImage);
   }, []);
 
   if (!backGroundImage) {
