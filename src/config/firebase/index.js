@@ -1,6 +1,8 @@
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore/lite';
 import Constants from '../constants';
 
-const config = {
+const firebaseConfig = {
   apiKey: Constants.firebase.apiKey,
   authDomain: Constants.firebase.authDomain,
   projectId: Constants.firebase.projectId,
@@ -9,4 +11,5 @@ const config = {
   appId: Constants.firebase.appId
 };
 
-export default config;
+export const firebaseApp = initializeApp(firebaseConfig);
+export const dataBase = getFirestore(firebaseApp);

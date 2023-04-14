@@ -1,9 +1,5 @@
 const BackGroundImage = ({ img }) => {
-  return (
-    <div className="base-image">
-      <img src={img} alt="Picture of kitchen" className="w-full" />
-    </div>
-  );
+  return <img src={img} alt="Picture of kitchen" className="w-full h-screen" />;
 };
 
 export default BackGroundImage;
