@@ -1,11 +1,6 @@
-import { collection, getDocs } from 'firebase/firestore/lite';
-import { dataBase } from '../firebase';
+import { getDocs } from 'firebase/firestore/lite';
+import { pointsCollection } from '../firebase';
 
-const dbInstancePoints = collection(dataBase, 'points');
-
-const dbPoints = async () => {
-  const points = await getDocs(dbInstancePoints);
-  return points;
-};
+const dbPoints = async () => await getDocs(pointsCollection);
 
 export default dbPoints;

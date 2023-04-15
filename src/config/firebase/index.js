@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore/lite';
+import { getFirestore, collection } from 'firebase/firestore/lite';
 import Constants from '../constants';
 
 const firebaseConfig = {
@@ -11,5 +11,8 @@ const firebaseConfig = {
   appId: Constants.firebase.appId
 };
 
-export const firebaseApp = initializeApp(firebaseConfig);
-export const dataBase = getFirestore(firebaseApp);
+const firebaseApp = initializeApp(firebaseConfig);
+const dataBase = getFirestore(firebaseApp);
+
+export const pointsCollection = collection(dataBase, Constants.points);
+export const materialsCollection = collection(dataBase, Constants.materials);
