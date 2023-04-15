@@ -1,6 +1,6 @@
 import useGetPoints from '../hooks/useGetPoints';
 
-const FingerPrint = () => {
+const FingerPrint = ({ onPress }) => {
   const { points, error } = useGetPoints();
 
   if (error) {
@@ -10,11 +10,12 @@ const FingerPrint = () => {
   return points.map(point => (
     <button
       key={point.id}
-      className="absolute"
+      className="absolute bg-white rounded-full opacity-75"
       style={{
         left: `${point.coordX}%`,
         top: `${point.coordY}%`
       }}
+      onClick={() => onPress(point)}
     >
       <img src="/fingerprint.png" alt={point.name} width="64" height="64" />
     </button>
