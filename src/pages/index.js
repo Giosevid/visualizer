@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import BackGroundImage from '../components/backGroundImage';
-import { constants } from '../config';
+import { BackGroundImage, Layout } from '../components/';
+import Constants from '../config/constants';
 
 export default function Home() {
   const [backGroundImage, setBackGroundImage] = useState(null);
 
   useEffect(() => {
-    setBackGroundImage(constants.BackGroundImage);
+    setBackGroundImage(Constants.BackGroundImage);
   }, []);
 
   if (!backGroundImage) {
@@ -14,8 +14,8 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen overflow-hidden">
+    <Layout>
       <BackGroundImage img={backGroundImage} />
-    </div>
+    </Layout>
   );
 }
