@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BackGroundImage, Layout } from '../components/';
 import Constants from '../config/constants';
+import FingerPrint from '../components/FingerPrint';
 
 export default function Home() {
   const [backGroundImage, setBackGroundImage] = useState(null);
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <Layout>
       <BackGroundImage img={backGroundImage} />
+      <FingerPrint />
     </Layout>
   );
 }
