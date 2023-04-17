@@ -1,31 +1,31 @@
-import { useEffect, useState } from 'react';
-import dbPoints from '../config/firestore/points';
+import { useEffect, useState } from 'react'
+import dbPoints from '../config/firestore/points'
 
 const useGetPoints = () => {
-  const [points, setPoints] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [points, setPoints] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const getPoints = async () => {
-      const response = await dbPoints();
+      const response = await dbPoints()
       const data = response.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
-      }));
+      }))
 
-      setLoading(false);
+      setLoading(false)
 
       if (data.length === 0) {
-        setError('There are no points to show');
+        setError('There are no points to show')
       }
 
-      setPoints(data);
-    };
-    getPoints();
-  }, []);
+      setPoints(data)
+    }
+    getPoints()
+  }, [])
 
-  return { points, loading, error };
-};
+  return { points, loading, error }
+}
 
-export default useGetPoints;
+export default useGetPoints

@@ -14,6 +14,6 @@ const Constants = {
   },
   points: 'points',
   materials: 'materials'
-};
+}
 
-export default Constants;
+export default Constants
