@@ -8,17 +8,19 @@ const FingerPrint = ({ onPress }) => {
   }
 
   return points.map(point => (
-    <button
-      key={point.id}
-      className='absolute bg-white rounded-full opacity-75'
-      style={{
-        left: `${point.coordX}%`,
-        top: `${point.coordY}%`
-      }}
-      onClick={() => onPress(point)}
-    >
-      <img src='/fingerprint.png' alt={point.name} width='64' height='64' />
-    </button>
+    <div className="w-full left-0 top-0">
+      <button
+        key={point.id}
+        className="absolute bg-white rounded-full opacity-75"
+        style={{
+          left: `${point.coordX}%`,
+          top: `${point.coordY}%`
+        }}
+        onClick={() => onPress(point)}
+      >
+        <img src='/fingerprint.png' alt={point.name} width='64' height='64' />
+      </button>
+    </div>
   ))
 }
 
