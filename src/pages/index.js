@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { BackGroundImage, Layout } from '../components/'
 import Constants from '../config/constants'
 import FingerPrint from '../components/FingerPrint'
