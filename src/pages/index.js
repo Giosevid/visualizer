@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
-import { BackGroundImage, Layout } from '../components/'
+import { Layout } from '../components/'
 import Constants from '../config/constants'
 import FingerPrint from '../components/FingerPrint'
 import Materials from '../components/Materials'
+import BackGroundImage from '../components/backGroundImage'
 
 export default function Home () {
   const [backGroundImage, setBackGroundImage] = useState(null)
